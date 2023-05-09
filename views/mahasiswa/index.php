@@ -1,9 +1,12 @@
 <?php
-/** @var yii\web\View $this */
-?>
-<h1>mahasiswa/index</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+use yii\helpers\Html;
+use yii\grid\LinkPager;
+
+
+?>
+
+<?php foreach ($models as $model): ?>
+    <?= $model->inisial ?>: <?= $model->id ?><br>
+<?php endforeach; ?>
+

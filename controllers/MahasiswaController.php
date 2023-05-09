@@ -2,12 +2,12 @@
 
 namespace app\controllers;
 
+use yii;
+use yii\web\Controller;
+use app\models\Mahasiswa;
+
 class MahasiswaController extends \yii\web\Controller
 {
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
     // pemanggilan vie 'Biodata'
     public function actionBiodata()
     {
@@ -17,6 +17,21 @@ class MahasiswaController extends \yii\web\Controller
     {
         return $this->render('profil');
     }
+    public function actionSimpanKrs()
+    {
+        return $this->render('simpan-krs');
+    }
+    public function actionIndex()
+    {
+        $models = Mahasiswa::find()->all();
+    
+        return $this->render('index', [
+            'models' => $models,
+        ]);
+    }
+    
+
+
 
 }
 

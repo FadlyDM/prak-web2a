@@ -2,15 +2,11 @@
 
 namespace app\controllers;
 
-class MatakuliahController extends \yii\web\Controller
+class MataKuliahController extends \yii\web\Controller
 {
-    public function actionDaftarMatakuliah()
+    public function actionHapus()
     {
-        return $this->render('daftar-matakuliah');
-    }
-    public function actionRiwayat()
-    {
-        return $this->render('riwayat');
+        return $this->render('hapus');
     }
 
 }
