@@ -1,6 +1,5 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
 
 ?>
@@ -10,9 +9,8 @@ use yii\grid\GridView;
         'dataProvider' => $dataProvider,
         'columns' => [
             'id',
-            'nim',
-            'nama',
-            'kelas'
+            'kode_mk',
+            'nama_mk'
         ]
 
     ])

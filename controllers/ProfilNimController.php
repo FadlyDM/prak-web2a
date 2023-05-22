@@ -2,18 +2,19 @@
 
 namespace app\controllers;
 
-use yii;
-use yii\web\Controller;
-use app\models\Mk;
+use app\models\ProfilNim;
 use yii\data\ActiveDataProvider;
+use yii\web\Controller;
 
-class MataKuliahController extends \yii\web\Controller
+
+class ProfilNimController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        $query = Mk::find();
-        $dataProvider = new ActiveDataProvider(['query' => $query]);
-    
+        $dataProvider = new ActiveDataProvider([
+            'query' => ProfilNim::find(),
+        ]);
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);

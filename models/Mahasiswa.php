@@ -5,11 +5,12 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "krs_mahasiswa".
+ * This is the model class for table "mahasiswa".
  *
  * @property int $id
- * @property string $name
- * @property string $inisial
+ * @property string $nim
+ * @property string $nama
+ * @property int $kelas
  */
 class Mahasiswa extends \yii\db\ActiveRecord
 {
@@ -18,7 +19,7 @@ class Mahasiswa extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'krs_mahasiswa';
+        return 'mahasiswa';
     }
 
     /**
@@ -27,11 +28,11 @@ class Mahasiswa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name'], 'required'],
-            [['id'], 'integer'],
-            [['name'], 'string', 'max' => 52],
-            [['inisial'], 'string', 'max' => 3],
-            [['id'], 'unique'],
+            [['nim', 'nama', 'kelas'], 'required'],
+            [['kelas'], 'integer'],
+            [['nim'], 'string', 'max' => 25],
+            [['nama'], 'string', 'max' => 255],
+            [['nim'], 'unique'],
         ];
     }
 
@@ -42,8 +43,9 @@ class Mahasiswa extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'inisial' => 'Inisial',
+            'nim' => 'Nim',
+            'nama' => 'Nama',
+            'kelas' => 'Kelas',
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace app\controllers;
 use yii;
 use yii\web\Controller;
 use app\models\Mahasiswa;
+use yii\data\ActiveDataProvider;
 
 class MahasiswaController extends \yii\web\Controller
 {
@@ -23,11 +24,10 @@ class MahasiswaController extends \yii\web\Controller
     }
     public function actionIndex()
     {
-        $models = Mahasiswa::find()->all();
+        $query = Mahasiswa::find();
+        $dataProvider = new ActiveDataProvider(['query' => $query]);
     
-        return $this->render('index', [
-            'models' => $models,
-        ]);
+        return $this->render('index');
     }
     
 

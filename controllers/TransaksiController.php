@@ -2,18 +2,19 @@
 
 namespace app\controllers;
 
-use yii;
-use yii\web\Controller;
-use app\models\Mk;
+use app\models\Transaksi;
 use yii\data\ActiveDataProvider;
+use yii\web\Controller;
 
-class MataKuliahController extends \yii\web\Controller
+
+class TransaksiController extends Controller
 {
     public function actionIndex()
     {
-        $query = Mk::find();
-        $dataProvider = new ActiveDataProvider(['query' => $query]);
-    
+        $dataProvider = new ActiveDataProvider([
+            'query' => Transaksi::find(),
+        ]);
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
